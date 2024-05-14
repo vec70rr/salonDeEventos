@@ -1,0 +1,17 @@
+/* create_event.css */
+#eventForm {
+    width: 350px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#eventForm label {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#eventForm input, #eventForm select {
+    margin-top: 10px;
+}

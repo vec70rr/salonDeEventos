@@ -32,13 +32,15 @@ button {
   box-sizing: border-box; /* agrega padding y border al width total del elemento */
 }
 
-button {
+button,
+.boton {
   background-color: #5c67f2;
   color: white;
   border: none;
   cursor: pointer;
 }
 
-button:hover {
+button:hover,
+.boton:hover {
   background-color: #5058cc;
 }

@@ -1,5 +1,3 @@
-/* quienessomos.css */
-
 header {
   display: flex;
   flex-direction: row;
@@ -11,81 +9,81 @@ header {
   text-align: center;
   border-radius: 8px;
   width: 100%;
+  position:sticky;
 }
 button {
   width: 10%;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2em;
-}
-
 main {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 40px auto;
-  max-width: 800px;
+  
+  width: 100%;
 }
 
-.about-us,
-.mission,
-.team {
-  margin-bottom: 40px;
-}
-
-.about-us h2,
-.mission h2,
-.team h2 {
+.titulo{
+  background-image: url(../img/Salon.png);
+  background-size:cover;
+  display: flex;
+  width: 100%;
+  height: 500px;
   text-align: center;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 20px;
+  font-size: 2.5em;
+  color: #ddd;
+
+}
+
+.columnas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.columna1 {
+  width: 30%;
+  background-color: #5c67f2;
+  display: flex;
+  flex-direction: column;
+}
+
+.columna1 h2 {
+  margin: 60px;
+  font-size: 2em;
+  text-align: center;
+  color: #f7f7f7;
+}
+
+.boton {
+  background-color: #3940a1;
+  color: white;
   font-size: 1.5em;
-  color: #444;
-}
-
-.about-us p,
-.mission p {
-  line-height: 1.6;
-  text-align: justify;
-}
-
-.team {
-  text-align: center;
-}
-
-.team-member {
-  display: inline-block;
-  margin: 20px;
-  text-align: center;
-}
-
-.team-member img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 2px solid #ddd;
-}
-
-.team-member h3 {
-  margin-top: 10px;
-  font-size: 1.2em;
-}
-
-.team-member p {
-  margin: 5px 0;
-  color: #666;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  margin: auto;
+  width: 60%;
+  border: 1px solid #fff;
 }
 
 footer {
   background-color: #333;
   color: #fff;
   text-align: center;
-  padding: 20px 0;
-  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  width: 100%;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  justify-content: space-evenly;
 }
 
 footer p {
   margin: 0;
+}
+
+.datos{
+  width: 20%;
+  text-align: left;
 }

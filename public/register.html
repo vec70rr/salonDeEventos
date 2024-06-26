@@ -5,9 +5,10 @@
     <title>Registro</title>
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/register.css" />
+    <script src="js/register.js"></script>
   </head>
   <body>
-    <form id="registerForm" action="php/register.php" method="post">
+    <form id="registerForm" onsubmit="event.preventDefault(); Registrar();">
       <label for="username">Nombre de usuario:</label>
       <input type="text" id="username" name="username" required />
       <label for="password">Contraseña:</label>

@@ -1,4 +1,4 @@
-function Iniciar() {
+function Registrar() {
   const user = document.getElementById("username").value;
   const pass = document.getElementById("password").value;
   const valores = {
@@ -13,11 +13,16 @@ function Iniciar() {
     },
     body: JSON.stringify(valores),
   };
-  fetch("http://localhost/SalonEventos/login.php", options)
+  fetch("http://localhost/SalonEventos/register.php", options)
     .then((response) => {
       return response.text();
     })
     .then((res) => {
-      console.log(res);
+      if (res === "Usuario registrado con exito") {
+        alert("Registro exitoso");
+        window.location.href = "http://localhost:3000/login.html";
+      } else {
+        alert(res);
+      }
     });
 }

@@ -1,8 +1,8 @@
 <?php
 $host = "localhost"; // o la IP del servidor de bases de datos
-$username = "usuario";
-$password = "contraseña";
-$database = "nombre_bd";
+$username = "root";
+$password = "";
+$database = "saloneventos";
 
 // Crear conexión
 $conn = new mysqli($host, $username, $password, $database);

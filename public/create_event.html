@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Crear Evento</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/create_event.css" />
+  </head>
+  <body>
+    <header>
+      <button onclick="location.href='events.html'">Eventos guardados</button>
+      <div id="titulo_header">
+        <h1>Crear Evento</h1>
+      </div>
+    </header>
+    <form id="eventForm" action="/create-event" method="post">
+      <label for="eventType">Tipo de evento:</label>
+      <select id="eventType" name="eventType">
+        <option value="Graduación">Graduación</option>
+        <option value="Boda">Boda</option>
+        <!-- Añade más opciones aquí -->
+      </select>
+      <label for="eventDate">Fecha del evento:</label>
+      <input type="date" id="eventDate" name="eventDate" required />
+      <label for="eventTime">Hora del evento:</label>
+      <input type="time" id="eventTime" name="eventTime" required />
+
+      <div class="dropzone" id="dropzone">
+        <p>Arrastra los elementos aquí</p>
+      </div>
+      <div class="draggable" id="table" draggable="true">Mesa</div>
+      <div class="draggable" id="waiter" draggable="true">Mesero</div>
+      <div class="draggable" id="band" draggable="true">Grupo Musical</div>
+      <div class="draggable" id="dancefloor" draggable="true">Pista de Baile</div>
+      <div class="draggable" id="speakers" draggable="true">Bocinas</div>
+
+      <button type="submit">Crear Evento</button>
+      <button type="button" onclick="saveEvent()">Guardar Evento</button>
+    </form>
+
+    <script src="js/drag_and_drop.js"></script>
+    <script src="js/save_event.js"></script>
+  </body>
+</html>

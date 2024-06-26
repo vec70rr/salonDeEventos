@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lista de Eventos</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/events.css" />
+</head>
+<body>
+  <header>
+    <button onclick="location.href='index.html'">Inicio</button>
+    <button onclick="location.href='create_event.html'">Crear evento nuevo</button>
+    <div id="titulo_header">
+      <h1>Lista de Eventos</h1>
+    </div>
+  </header>
+  <div id="eventsList">
+    <ul id="eventItems">
+      <!-- Eventos serán listados aquí -->
+    </ul>
+  </div>
+
+  <!-- Formulario para editar evento (oculto inicialmente) -->
+  <div id="editForm" style="display: none;">
+    <h2>Editar Evento</h2>
+    <form id="eventEditForm">
+      <label for="editEventType">Tipo de evento:</label>
+      <input type="text" id="editEventType" name="editEventType" required /><br />
+      <label for="editEventDate">Fecha del evento:</label>
+      <input type="date" id="editEventDate" name="editEventDate" required /><br />
+      <label for="editEventTime">Hora del evento:</label>
+      <input type="time" id="editEventTime" name="editEventTime" required /><br />
+      <input type="hidden" id="eventId" name="eventId" />
+      <button type="button" onclick="updateEvent()">Actualizar Evento</button>
+      <button type="button" onclick="cancelEdit()">Cancelar</button>
+    </form>
+  </div>
+
+  
+
+  <script src="js/events.js"></script>
+</body>
+</html>

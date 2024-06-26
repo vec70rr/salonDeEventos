@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Verificar la contraseña
         if (password_verify($password, $row['password'])) {
             $_SESSION['username'] = $username; // Almacenar el nombre de usuario en la sesión
-            header("Location: create_event.html"); // Redirige a la página de creación de eventos
+            header("Location: events.html"); // Redirige a la página de creación de eventos
             exit();
         } else {
             echo "Contraseña incorrecta.";

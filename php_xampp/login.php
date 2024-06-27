@@ -26,8 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($row = $result->fetch_assoc()) {
         // Verificar la contraseña
         if (password_verify($password, $row['password'])) {
-            $_SESSION['username'] = $username; // Almacenar el nombre de usuario en la sesión
-            echo "Inicio correcto";
+            $_SESSION["username"] = $username; // Almacenar el nombre de usuario en la sesión
+            echo "1";
         } else {
             echo "Contraseña incorrecta.";
         }

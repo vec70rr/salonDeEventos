@@ -18,6 +18,13 @@ function Iniciar() {
       return response.text();
     })
     .then((res) => {
-      console.log(res);
+      if (res == 1) {
+        alert("Iniciando sesion");
+        window.localStorage.setItem("usuario", user);
+        window.location.href = "http://localhost:3000/events.html";
+      } else {
+        console.log(res);
+        alert(res);
+      }
     });
 }

@@ -27,10 +27,19 @@ DROP TABLE IF EXISTS `cliente`;
 CREATE TABLE `cliente` (
   `id_cliente` int NOT NULL AUTO_INCREMENT,
   `nombre_usuario` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
   PRIMARY KEY (`id_cliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cliente`
+--
+
+LOCK TABLES `cliente` WRITE;
+/*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `elemento`
@@ -50,8 +59,17 @@ CREATE TABLE `elemento` (
   KEY `id_evento_idx` (`id_evento`),
   CONSTRAINT `evento` FOREIGN KEY (`id_evento`) REFERENCES `evento` (`id_evento`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `id_tipoelemento` FOREIGN KEY (`id_tipoelemento`) REFERENCES `tipoelemento` (`id_tipoelemento`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `elemento`
+--
+
+LOCK TABLES `elemento` WRITE;
+/*!40000 ALTER TABLE `elemento` DISABLE KEYS */;
+/*!40000 ALTER TABLE `elemento` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `evento`
@@ -65,11 +83,23 @@ CREATE TABLE `evento` (
   `id_cliente` int NOT NULL,
   `fecha` date NOT NULL,
   `hora` time NOT NULL,
+  `id_tipoevento` int NOT NULL,
   PRIMARY KEY (`id_evento`),
   KEY `id_cliente_idx` (`id_cliente`),
-  CONSTRAINT `id_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `id_tipoevento_idx` (`id_tipoevento`),
+  CONSTRAINT `id_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `id_tipoevento` FOREIGN KEY (`id_tipoevento`) REFERENCES `tipoevento` (`id_tipoevento`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `evento`
+--
+
+LOCK TABLES `evento` WRITE;
+/*!40000 ALTER TABLE `evento` DISABLE KEYS */;
+/*!40000 ALTER TABLE `evento` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `invitado`
@@ -87,6 +117,15 @@ CREATE TABLE `invitado` (
   CONSTRAINT `id_mesa` FOREIGN KEY (`id_mesa`) REFERENCES `mesa` (`id_mesa`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `invitado`
+--
+
+LOCK TABLES `invitado` WRITE;
+/*!40000 ALTER TABLE `invitado` DISABLE KEYS */;
+/*!40000 ALTER TABLE `invitado` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `menu`
@@ -111,6 +150,15 @@ CREATE TABLE `menu` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `menu`
+--
+
+LOCK TABLES `menu` WRITE;
+/*!40000 ALTER TABLE `menu` DISABLE KEYS */;
+/*!40000 ALTER TABLE `menu` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `mesa`
 --
 
@@ -125,8 +173,17 @@ CREATE TABLE `mesa` (
   PRIMARY KEY (`id_mesa`),
   KEY `id_evento_idx` (`id_evento`),
   CONSTRAINT `id_evento` FOREIGN KEY (`id_evento`) REFERENCES `evento` (`id_evento`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mesa`
+--
+
+LOCK TABLES `mesa` WRITE;
+/*!40000 ALTER TABLE `mesa` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mesa` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `platillo`
@@ -145,6 +202,15 @@ CREATE TABLE `platillo` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `platillo`
+--
+
+LOCK TABLES `platillo` WRITE;
+/*!40000 ALTER TABLE `platillo` DISABLE KEYS */;
+/*!40000 ALTER TABLE `platillo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tipoelemento`
 --
 
@@ -155,8 +221,18 @@ CREATE TABLE `tipoelemento` (
   `id_tipoelemento` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) NOT NULL,
   PRIMARY KEY (`id_tipoelemento`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tipoelemento`
+--
+
+LOCK TABLES `tipoelemento` WRITE;
+/*!40000 ALTER TABLE `tipoelemento` DISABLE KEYS */;
+INSERT INTO `tipoelemento` VALUES (1,'Mesero'),(2,'Grupo Musical'),(3,'Pista'),(4,'Bocinas');
+/*!40000 ALTER TABLE `tipoelemento` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tipoevento`
@@ -169,8 +245,18 @@ CREATE TABLE `tipoevento` (
   `id_tipoevento` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
   PRIMARY KEY (`id_tipoevento`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tipoevento`
+--
+
+LOCK TABLES `tipoevento` WRITE;
+/*!40000 ALTER TABLE `tipoevento` DISABLE KEYS */;
+INSERT INTO `tipoevento` VALUES (1,'Graduacion'),(2,'Boda'),(3,'Bautizo'),(4,'XV años'),(5,'Reunión familiar'),(6,'Reunión de negocios'),(7,'Otro');
+/*!40000 ALTER TABLE `tipoevento` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -181,4 +267,4 @@ CREATE TABLE `tipoevento` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-26 14:05:27
+-- Dump completed on 2024-06-27  2:31:40

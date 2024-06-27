@@ -13,11 +13,20 @@
         <h1>Crear Evento</h1>
       </div>
     </header>
-    <form id="eventForm" action="/create-event" method="post">
+    <form
+      id="eventForm"
+      onsubmit="event.preventDefault(); saveEvent();"
+      method="post"
+    >
       <label for="eventType">Tipo de evento:</label>
       <select id="eventType" name="eventType">
-        <option value="Graduación">Graduación</option>
-        <option value="Boda">Boda</option>
+        <option value="1">Graduación</option>
+        <option value="2">Boda</option>
+        <option value="3">Bautizo</option>
+        <option value="4">XV años</option>
+        <option value="5">Reunión Familiar</option>
+        <option value="6">Reunión de Negocios</option>
+        <option value="7">Otro</option>
         <!-- Añade más opciones aquí -->
       </select>
       <label for="eventDate">Fecha del evento:</label>
@@ -31,11 +40,10 @@
       <div class="draggable" id="table" draggable="true">Mesa</div>
       <div class="draggable" id="waiter" draggable="true">Mesero</div>
       <div class="draggable" id="band" draggable="true">Grupo Musical</div>
-      <div class="draggable" id="dancefloor" draggable="true">Pista de Baile</div>
+      <div class="draggable" id="dancefloor" draggable="true">Pista</div>
       <div class="draggable" id="speakers" draggable="true">Bocinas</div>
 
       <button type="submit">Crear Evento</button>
-      <button type="button" onclick="saveEvent()">Guardar Evento</button>
     </form>
 
     <script src="js/drag_and_drop.js"></script>

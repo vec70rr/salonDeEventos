@@ -1,0 +1,53 @@
+.dropzone {
+  width: 800px;
+  height: 600px;
+  border: 2px dashed #ccc;
+  margin: 20px;
+  position: relative;
+}
+
+img[name="Mesa"] {
+  width: 100px;
+  height: 100px;
+}
+
+img[name="Mesero"] {
+  width: 50px;
+  height: 50px;
+}
+
+img[name="Grupo Musical"] {
+  width: 200px;
+  height: 100px;
+}
+
+img[name="Pista"] {
+  width: 200px;
+  height: 200px;
+}
+
+img[name="Bocina"] {
+  width: 50px;
+  height: 50px;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  width: 100%;
+}
+#titulo_header {
+  display: flex;
+  flex: 15;
+  justify-content: center;
+  width: 90%;
+}
+button {
+  flex: 1;
+}

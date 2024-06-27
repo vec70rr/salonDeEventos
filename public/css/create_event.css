@@ -38,17 +38,35 @@ button {
   margin-top: 10px;
 }
 
+/* Estilos básicos para drag-and-drop */
+.draggable {
+  display: inline-flex;
+  cursor: move;
+}
 
- /* Estilos básicos para drag-and-drop */
- .draggable {
+img[name="Mesa"] {
+  width: 100px;
+  height: 100px;
+}
+
+img[name="Mesero"] {
   width: 50px;
   height: 50px;
-  margin: 10px;
-  padding: 10px;
-  display:inline-flex;
-  background-color: #ccc;
-  text-align: center;
-  cursor: move;
+}
+
+img[name="Grupo Musical"] {
+  width: 200px;
+  height: 100px;
+}
+
+img[name="Pista"] {
+  width: 200px;
+  height: 200px;
+}
+
+img[name="Bocina"] {
+  width: 50px;
+  height: 50px;
 }
 .dropzone {
   width: 800px;

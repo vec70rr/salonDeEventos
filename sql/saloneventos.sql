@@ -29,7 +29,7 @@ CREATE TABLE `cliente` (
   `nombre_usuario` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
   PRIMARY KEY (`id_cliente`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,6 +38,7 @@ CREATE TABLE `cliente` (
 
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
+INSERT INTO `cliente` VALUES (30,'gabo','$2y$10$9UcvPzJc7n4w/WfcuHfcV.niCu2.GueunVTkV9hxiFgNdIT.NZEyy'),(31,'juan','$2y$10$nJRlWLo0zsZ5oFD4ew5Zhec4pbCVG53XG63Noy8kVCWKe.GKcPCd6');
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,7 +60,7 @@ CREATE TABLE `elemento` (
   KEY `id_evento_idx` (`id_evento`),
   CONSTRAINT `evento` FOREIGN KEY (`id_evento`) REFERENCES `evento` (`id_evento`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `id_tipoelemento` FOREIGN KEY (`id_tipoelemento`) REFERENCES `tipoelemento` (`id_tipoelemento`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,6 +69,7 @@ CREATE TABLE `elemento` (
 
 LOCK TABLES `elemento` WRITE;
 /*!40000 ALTER TABLE `elemento` DISABLE KEYS */;
+INSERT INTO `elemento` VALUES (8,3,359,324,20),(9,2,460,189,20),(10,1,72,112,20),(11,4,349,196,20),(12,3,188,169,21),(13,2,497,222,21),(14,1,87,132,21),(15,4,423,123,21),(16,4,244,120,21),(17,2,438,234,22),(18,3,291,426,22),(19,4,212,425,22),(20,1,393,102,22);
 /*!40000 ALTER TABLE `elemento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,7 +91,7 @@ CREATE TABLE `evento` (
   KEY `id_tipoevento_idx` (`id_tipoevento`),
   CONSTRAINT `id_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `id_tipoevento` FOREIGN KEY (`id_tipoevento`) REFERENCES `tipoevento` (`id_tipoevento`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,6 +100,7 @@ CREATE TABLE `evento` (
 
 LOCK TABLES `evento` WRITE;
 /*!40000 ALTER TABLE `evento` DISABLE KEYS */;
+INSERT INTO `evento` VALUES (20,30,'2024-07-25','21:05:00',4),(21,30,'2024-06-30','15:28:00',4),(22,30,'2024-07-16','12:50:00',1),(23,30,'2024-06-15','21:52:00',7);
 /*!40000 ALTER TABLE `evento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -173,7 +176,7 @@ CREATE TABLE `mesa` (
   PRIMARY KEY (`id_mesa`),
   KEY `id_evento_idx` (`id_evento`),
   CONSTRAINT `id_evento` FOREIGN KEY (`id_evento`) REFERENCES `evento` (`id_evento`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -182,6 +185,7 @@ CREATE TABLE `mesa` (
 
 LOCK TABLES `mesa` WRITE;
 /*!40000 ALTER TABLE `mesa` DISABLE KEYS */;
+INSERT INTO `mesa` VALUES (6,20,160,204),(7,21,510,110),(8,22,153,128),(9,23,161,135),(10,23,363,428),(11,23,602,271);
 /*!40000 ALTER TABLE `mesa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -230,7 +234,7 @@ CREATE TABLE `tipoelemento` (
 
 LOCK TABLES `tipoelemento` WRITE;
 /*!40000 ALTER TABLE `tipoelemento` DISABLE KEYS */;
-INSERT INTO `tipoelemento` VALUES (1,'Mesero'),(2,'Grupo Musical'),(3,'Pista'),(4,'Bocinas');
+INSERT INTO `tipoelemento` VALUES (1,'Mesero'),(2,'Grupo Musical'),(3,'Pista'),(4,'Bocina');
 /*!40000 ALTER TABLE `tipoelemento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -267,4 +271,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-27  2:31:40
+-- Dump completed on 2024-06-27  5:36:06

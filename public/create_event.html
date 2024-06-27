@@ -33,15 +33,53 @@
       <input type="date" id="eventDate" name="eventDate" required />
       <label for="eventTime">Hora del evento:</label>
       <input type="time" id="eventTime" name="eventTime" required />
+      <div id="elementos">
+        <img
+          class="draggable"
+          name="Mesa"
+          draggable="true"
+          id="table"
+          alt="mesa"
+          src="img/mesa.jpeg"
+        />
+        <img
+          class="draggable"
+          name="Mesero"
+          id="waiter"
+          draggable="true"
+          alt="mesero"
+          src="img/mesero.jpg"
+        />
+        <img
+          alt="grupo"
+          class="draggable"
+          name="Grupo Musical"
+          id="band"
+          draggable="true"
+          src="img/grupoMusical.jpg"
+        />
 
+        <img
+          class="draggable"
+          name="Pista"
+          id="dancefloor"
+          draggable="true"
+          alt="pista"
+          src="img/pistaBaile.webp"
+        />
+
+        <img
+          class="draggable"
+          name="Bocina"
+          id="speakers"
+          draggable="true"
+          alt="bocinas"
+          src="img/bocina.jpg"
+        />
+      </div>
       <div class="dropzone" id="dropzone">
         <p>Arrastra los elementos aquí</p>
       </div>
-      <div class="draggable" id="table" draggable="true">Mesa</div>
-      <div class="draggable" id="waiter" draggable="true">Mesero</div>
-      <div class="draggable" id="band" draggable="true">Grupo Musical</div>
-      <div class="draggable" id="dancefloor" draggable="true">Pista</div>
-      <div class="draggable" id="speakers" draggable="true">Bocinas</div>
 
       <button type="submit">Crear Evento</button>
     </form>

@@ -23,15 +23,18 @@ function saveEvent() {
   root.appendChild(timeElement);
 
   let configElement = xmlDoc.createElement("configuration");
-  elements.forEach((element) => {
-    let elem = xmlDoc.createElement("element");
 
+  elements.forEach((element) => {
+    console.log(element);
+    console.log(element.name);
+    console.log(element.src);
+    let elem = xmlDoc.createElement("element");
     elem.setAttribute("type", element.textContent);
     elem.setAttribute("x", element.style.left);
     elem.setAttribute("y", element.style.top);
     configElement.appendChild(elem);
     let elemento = {
-      tipo: element.textContent,
+      tipo: element.name,
       posx: element.style.left.replace("px", ""),
       posy: element.style.top.replace("px", ""),
     };
